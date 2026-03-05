@@ -1,0 +1,202 @@
+/*
+ * Weather widget styles
+ * Inspired by Apple Human Interface Guidelines: glanceable, clear hierarchy,
+ * system typography, deference to content, minimal decoration.
+ */
+
+:root {
+  --bg: #f5f7fa;
+  --card-bg: #ffffff;
+  --text: #1d1d1f;
+  --text-secondary: #6e6e73;
+  --text-tertiary: #86868b;
+  --accent: #0071e3;
+  --accent-hover: #0077ed;
+  --border: rgba(0, 0, 0, 0.06);
+  --shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  --radius: 12px;
+  --radius-sm: 8px;
+  --font: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  width: 320px;
+  min-height: 200px;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font);
+  font-size: 14px;
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.weather-widget {
+  padding: 16px;
+}
+
+/* Hero: condition + temperature (glanceable) */
+.weather-hero {
+  text-align: center;
+  padding: 20px 16px 24px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  margin-bottom: 12px;
+}
+
+.weather-condition {
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-secondary);
+  margin: 0 0 4px 0;
+  letter-spacing: -0.01em;
+}
+
+.weather-temp {
+  font-size: 56px;
+  font-weight: 200;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--text);
+}
+
+.weather-temp-unit {
+  font-size: 28px;
+  font-weight: 300;
+  color: var(--text-secondary);
+  vertical-align: super;
+}
+
+/* Details row: humidity + wind */
+.weather-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.weather-detail {
+  background: var(--card-bg);
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.weather-detail-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.weather-detail-content {
+  min-width: 0;
+}
+
+.weather-detail-label {
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text-tertiary);
+  margin: 0 0 2px 0;
+}
+
+.weather-detail-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin: 0;
+}
+
+/* Primary action */
+.weather-actions {
+  margin-bottom: 8px;
+}
+
+.weather-btn {
+  width: 100%;
+  padding: 12px 20px;
+  font-family: var(--font);
+  font-size: 15px;
+  font-weight: 500;
+  color: #fff;
+  background: var(--accent);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.weather-btn:hover {
+  background: var(--accent-hover);
+}
+
+.weather-btn:active {
+  transform: scale(0.98);
+}
+
+.weather-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Fallback note */
+.weather-fallback {
+  font-size: 11px;
+  color: var(--text-tertiary);
+  text-align: center;
+  margin: 0;
+  padding: 6px 0 0;
+}
+
+/* States: loading, error, empty */
+.weather-state {
+  text-align: center;
+  padding: 24px 16px;
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.weather-state-message {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.weather-state.error .weather-state-message {
+  color: #c00;
+}
+
+.weather-widget.has-result .weather-state {
+  display: none;
+}
+
+.weather-widget:not(.has-result) .weather-hero,
+.weather-widget:not(.has-result) .weather-details {
+  display: none;
+}
+
+.weather-fallback-note {
+  display: none;
+}
+
+.weather-fallback-note.show {
+  display: block;
+}

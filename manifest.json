@@ -1,0 +1,13 @@
+{
+  "manifest_version": 3,
+  "name": "Weather Sample",
+  "version": "1.1.0",
+  "description": "Simple weather plugin using the free Open-Meteo API (no API key required).",
+  "action": {
+    "default_popup": "plugin.html",
+    "default_title": "Weather"
+  },
+  "host_permissions": [
+    "https://api.open-meteo.com/*"
+  ]
+}

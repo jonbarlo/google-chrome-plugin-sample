@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weather</title>
+  <link rel="stylesheet" href="plugin.css">
+</head>
+<body>
+  <div class="weather-widget" id="weatherWidget">
+    <div class="weather-state" id="weatherState">
+      <p class="weather-state-message" id="weatherStateMessage">Get weather for your location</p>
+    </div>
+
+    <div class="weather-hero">
+      <p class="weather-condition" id="weatherCondition"></p>
+      <p class="weather-temp" id="weatherTemp"><span class="weather-temp-unit" id="weatherTempUnit"></span></p>
+    </div>
+
+    <div class="weather-details">
+      <div class="weather-detail">
+        <div class="weather-detail-icon" aria-hidden="true">💧</div>
+        <div class="weather-detail-content">
+          <p class="weather-detail-label">Humidity</p>
+          <p class="weather-detail-value" id="weatherHumidity">—</p>
+        </div>
+      </div>
+      <div class="weather-detail">
+        <div class="weather-detail-icon" aria-hidden="true">💨</div>
+        <div class="weather-detail-content">
+          <p class="weather-detail-label">Wind</p>
+          <p class="weather-detail-value" id="weatherWind">—</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="weather-actions">
+      <button type="button" class="weather-btn" id="callApi">Get weather</button>
+    </div>
+
+    <p class="weather-fallback-note" id="weatherFallbackNote">Location unavailable; showing default location.</p>
+  </div>
+  <script src="plugin.js"></script>
+</body>
+</html>
