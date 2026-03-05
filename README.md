@@ -40,10 +40,16 @@ To **import** the plugin into Chrome from a zip file:
 
 3. **Enable Developer mode**  
    Turn on **Developer mode** (toggle in the top‑right of the Extensions page).
+   
+<img width="1529" height="550" alt="Screenshot 2026-03-04 at 20 24 52" src="https://github.com/user-attachments/assets/0a194468-f4d5-4f86-987a-bb2386a6dd5c" />
 
-4. **Load the extension**  
+5. **Load the extension**  
    - Click **Load unpacked**.  
    - In the file dialog, select the **unzipped folder** (the one that contains `manifest.json`), then confirm.
 
-5. **Confirm**  
+6. **Confirm**  
    The extension should appear in the list. Pin it from the puzzle menu if you want it on the toolbar.
+
+
+<img width="1542" height="1010" alt="Screenshot 2026-03-04 at 20 26 41" src="https://github.com/user-attachments/assets/8b6be553-3cb1-45e0-8095-4a5ed25b0afc" />
+
